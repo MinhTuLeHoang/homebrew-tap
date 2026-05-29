@@ -15,6 +15,11 @@ class MinhthetusCli < Formula
     system "go", "build", "-ldflags", ldflags, "-o", "minhthetus-cli", "main.go"
     
     bin.install "minhthetus-cli"
+
+    # Generate and install shell completions natively
+    (bash_completion/"minhthetus-cli").write `#{bin}/minhthetus-cli completion bash`
+    (zsh_completion/"_minhthetus-cli").write `#{bin}/minhthetus-cli completion zsh`
+    (fish_completion/"minhthetus-cli.fish").write `#{bin}/minhthetus-cli completion fish`
   end
 
   test do
