@@ -17,9 +17,20 @@ class MinhthetusCli < Formula
     bin.install "minhthetus-cli"
 
     # Generate and install shell completions natively
-    (bash_completion/"minhthetus-cli").write `#{bin}/minhthetus-cli completion bash`
-    (zsh_completion/"_minhthetus-cli").write `#{bin}/minhthetus-cli completion zsh`
-    (fish_completion/"minhthetus-cli.fish").write `#{bin}/minhthetus-cli completion fish`
+    generate_completions_from_executable(bin/"minhthetus-cli", "completion")
+  end
+
+  def caveats
+    <<~EOS
+      To enable autocompletion automatically, please run minhthetus-cli once:
+        minhthetus-cli
+
+      If that does not work, you can force setting it up:
+        minhthetus-cli setup-completion
+
+      Then restart your terminal or run:
+        source ~/.zshrc (for Zsh) or source ~/.bashrc (for Bash)
+    EOS
   end
 
   test do
