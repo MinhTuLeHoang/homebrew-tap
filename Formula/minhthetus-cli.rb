@@ -1,8 +1,8 @@
 class MinhthetusCli < Formula
   desc "A professional, high-performance CLI for developer productivity"
   homepage "https://github.com/MinhTuLeHoang/minhthetus-cli"
-  url "https://github.com/MinhTuLeHoang/minhthetus-cli/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "067c0e9d1080c7c6c4120e03f8f94949b5bb9c1f708959022d4ac957fca904a2"
+  url "https://github.com/MinhTuLeHoang/minhthetus-cli/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "b4307a2a8dafd9d4b22ff5d0a93b284421b645d20db5e2abdee619940ac63030"
   license "ISC"
 
   depends_on "go" => :build
